@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Merge Objects</h1>
+
+        Object 1:
+        <br>
+        <br>
+        <textarea name="" id="obj1" rows="6" cols="90" ></textarea>
+
+        <br>
+        <br>
+        Object 2:
+        <br>
+        <br>
+        <textarea name="" id="obj2" rows="6" cols="90"></textarea>
+        
+        <br>
+        <br>
+        <button onclick="mergeObj()">Merge Objects</button>
+
+        <br>
+        <br>
+
+        <p id="p1"></p>
+        <br>
+        <br>
+    
+    </div>
+
+    <script>
+        function mergeObj(){
+
+          let  obj1 = JSON.parse(document.getElementById("obj1").value);
+          let  obj2 = JSON.parse(document.getElementById("obj2").value);
+
+          let  obj3 = {...obj1 , ...obj2};
+
+         document.getElementById("p1").textContent = `Merged Object: ${JSON.stringify(obj3)}`;
+
+
+
+        }
+
+    </script>
+
+
+
+</body>
+</html>
